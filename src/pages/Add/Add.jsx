@@ -1,12 +1,14 @@
-import React from 'react';
-import AddForm from '../../components/AddForm/AddForm'
+import React from "react";
+import AddForm from "../../components/AddForm/AddForm";
+import HeaderAdd from "../../components/AddForm/HeaderAdd";
 
 const Add = () => {
   return (
     <div>
-        <AddForm />
+      <HeaderAdd />
+      <AddForm />
     </div>
-  )
-}
+  );
+};
 
-export default Add
+export default Add;
