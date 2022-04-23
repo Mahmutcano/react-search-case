@@ -1,0 +1,84 @@
+* {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+
+.header-form {
+    margin: auto;
+    margin-top: 100px;
+    max-width: 50em;
+    text-align: center;
+    width: 100%;
+
+    .link-form {
+        text-decoration: none;
+        color: rgb(15, 15, 15);
+        font-size: 18px;
+    }
+
+    img:hover {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+    }
+
+    .form {
+        margin: auto;
+        max-width: 55em;
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        display: grid;
+
+        .label-form {
+            text-align: start;
+            max-width: 60em;
+            padding: 10px;
+            display: block;
+
+            .input-form {
+                max-width: 50em;
+                width: 60%;
+                height: 42px;
+                background: #FFFFFF;
+                border-radius: 8px;
+                text-decoration: none;
+                border: 1px solid #204080;
+                font-weight: 500;
+            }
+            .input-form:hover {
+                background: rgba(232, 232, 232, 0.1);
+                border: 2px solid #204080;
+                color: rgba(0, 0, 0, 0.8);
+            }
+        }
+
+
+        .btn-form {
+            margin-right: 16px;
+            font-size: 24px;
+            width: 138px;
+            height: 46px;
+            border-radius: 8px;
+            background: #204080;
+            color: #fff;
+            border: none;
+            margin-top: 2rem;
+            cursor: pointer;
+        }
+
+        .btn-form:hover {
+            background: #4F75C2;
+            transform: scale(0.9);
+            -webkit-transform: scale(0.9);
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -o-transform: scale(0.9);
+        }
+    }
+}
