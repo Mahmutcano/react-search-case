@@ -34,33 +34,6 @@ export const SearchSlice=createSlice({
             }
 
         },
-        NameAscending:(state)=>{
-            let filterNameAscending=state.filterData.sort();
-            state.filterData=filterNameAscending;
-            
-        },
-        NameDescending:(state)=> {
-            let filterNameDescending=state.filterData.sort().reverse();
-            state.filterData=filterNameDescending;
-        },
-        YearAscending:(state)=>{ 
-            const comparator=(a,b)=>{
-                let yearA=a[3].slice(6);
-                let yearB=b[3].slice(6);
-                return yearA-yearB;
-            }
-            let x=state.filterData.sort(comparator);
-            state.filterData=x;
-        },
-        YearDescending:(state)=>{
-            const comparator=(a,b)=>{
-                let yearA=a[3].slice(6);
-                let yearB=b[3].slice(6);
-                return yearB-yearA;
-            }
-            let x=state.filterData.sort(comparator);
-            state.filterData=x;
-        },
     }
 })
 

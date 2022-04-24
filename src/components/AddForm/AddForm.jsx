@@ -2,6 +2,8 @@ import React from "react";
 import "./style/add.scss";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import dataJson from "../../json/mockData.json";
+
 
 const addForm = () => {
   return (
@@ -10,9 +12,11 @@ const addForm = () => {
         <Formik
           initialValues={{
             name: "",
+            company: "",
+            email: "",
+            date: "",
             country: "",
             city: "",
-            email: "",
           }}
           validationSchema={Yup.object({
             name: Yup.string()
@@ -32,10 +36,10 @@ const addForm = () => {
               .required("Required"),
           })}
           onSubmit={(values) => {
-            console.log(JSON.stringify(values, null, 2));
+            console.log(values)
           }}
         >
-          {({ handleSubmit, handleChange }) => (
+          {({ handleSubmit, handleChange, isValid }) => (
             <form className="form" onSubmit={handleSubmit}>
               <label htmlFor="name" className="label-form">
                 Name Surname
@@ -47,6 +51,46 @@ const addForm = () => {
                 />
                 <ErrorMessage
                   name="name"
+                  render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+                />
+              </label>
+
+              <label htmlFor="company" className="label-form">
+                Company
+                <br />
+                <input
+                  name="company"
+                  className="input-form"
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="name"
+                  render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+                />
+              </label>
+
+              <label htmlFor="email" className="label-form">
+                Email <br />
+                <input
+                  name="email"
+                  className="input-form"
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="email"
+                  render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+                />
+              </label>
+
+              <label htmlFor="date" className="label-form">
+                Date <br />
+                <input
+                  name="date"
+                  className="input-form"
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="email"
                   render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
                 />
               </label>
@@ -62,6 +106,7 @@ const addForm = () => {
                   render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
                 />
               </label>
+
               <label htmlFor="city" className="label-form">
                 City <br />
                 <input
@@ -74,19 +119,8 @@ const addForm = () => {
                   render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
                 />
               </label>
-              <label htmlFor="email" className="label-form">
-                Email <br />
-                <input
-                  name="email"
-                  className="input-form"
-                  onChange={handleChange}
-                />
-                <ErrorMessage
-                  name="email"
-                  render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
-                />
-              </label>
-              <button className="btn-form" type="submit">
+
+              <button className="btn-form" type="submit" disabled={!isValid}>
                 ADD
               </button>
             </form>
