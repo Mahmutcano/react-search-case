@@ -1,7 +1,7 @@
 # 📝 React Search and Add 
 React Js
 
-## Product List
+## Frontend
 ![github](ssimages/img1.png)
 ![github](ssimages/img2.png)
 ![github](ssimages/img3.png)
